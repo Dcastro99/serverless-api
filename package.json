@@ -1,0 +1,22 @@
+{
+  "name": "serverless-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dcastro99/serverless-api.git"
+  },
+  "author": "Danny Castro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dcastro99/serverless-api/issues"
+  },
+  "homepage": "https://github.com/Dcastro99/serverless-api#readme",
+  "dependencies": {
+    "dynamoose": "^3.1.0"
+  }
+}
