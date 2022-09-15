@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 
 const dynamoose = require("dynamoose");
 
@@ -37,6 +36,7 @@ exports.handler = async (event) => {
       body: JSON.stringify(getPeople),
     };
     return response;
+
 
 
   } catch (e) {
