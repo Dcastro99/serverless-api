@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 
 const dynamoose = require("dynamoose");
 
@@ -16,27 +15,33 @@ exports.handler = async (event) => {
   console.log('PARAMS!!!', event.pathParameters);
   console.log('EVENTS!!!', event);
 
-
+  let createPeople;
 
   try {
+    let stringy = event.body.toString();
+    let parsedStr = JSON.parse(stringy);
 
-    let getPeople;
-
-    if (event.pathParameters) {
-
-      getPeople = await peopleModel.get(event.pathParameters);
-
+    let newBody = {
+      body: parsedStr
     }
-    else {
-      getPeople = await peopleModel.scan().all().exec();
 
-    }
+
+
+    createPeople = await peopleModel.create({
+      id: newBody.body.id,
+      Name: newBody.body.Name,
+      Phone: newBody.body.Phone
+
+    });
+
+
 
     const response = {
       statusCode: 200,
-      body: JSON.stringify(getPeople),
+      body: JSON.stringify(createPeople),
     };
     return response;
+
 
 
   } catch (e) {

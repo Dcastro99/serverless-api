@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 
 const dynamoose = require("dynamoose");
 
@@ -20,23 +19,21 @@ exports.handler = async (event) => {
 
   try {
 
-    let getPeople;
+    let deletePeople;
 
     if (event.pathParameters) {
 
-      getPeople = await peopleModel.get(event.pathParameters);
+      deletePeople = await peopleModel.delete(event.pathParameters);
 
     }
-    else {
-      getPeople = await peopleModel.scan().all().exec();
 
-    }
 
     const response = {
       statusCode: 200,
-      body: JSON.stringify(getPeople),
+      body: JSON.stringify(deletePeople),
     };
     return response;
+
 
 
   } catch (e) {
