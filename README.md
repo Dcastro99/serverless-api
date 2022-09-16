@@ -35,3 +35,7 @@ Create a single resource REST API using a domain model of your choosing, constru
 ### Returns
 
 ![Table](/images/returnLab18.png)
+
+### Collaborators
+
+- Jim Doyle
